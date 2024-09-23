@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/imageButton7"
-        app:srcCompat="@drawable/Package" />
+        app:srcCompat="@drawable/packages_inventory" />
 
     <ImageButton
         android:id="@+id/imageButton9"
