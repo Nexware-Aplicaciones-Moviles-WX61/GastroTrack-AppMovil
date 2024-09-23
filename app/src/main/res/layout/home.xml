@@ -55,9 +55,12 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="12dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:srcCompat="@drawable/log_out"
         tools:layout_editor_absoluteY="665dp" />
 
@@ -66,11 +69,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/notifications"
-        tools:layout_editor_absoluteY="668dp" />
+        tools:layout_editor_absoluteY="665dp" />
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -80,16 +83,19 @@
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/Users"
-        tools:layout_editor_absoluteX="263dp" />
+        tools:layout_editor_absoluteX="255dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:srcCompat="@drawable/Package"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="668dp" />
+        tools:layout_editor_absoluteY="665dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="336dp"
