@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton12"
-        app:srcCompat="@drawable/Package" />
+        app:srcCompat="@drawable/packages_inventory" />
 
     <ImageButton
         android:id="@+id/imageButton12"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton16"
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/Users" />
+        app:srcCompat="@drawable/profile_icon" />
 
     <ImageButton
         android:id="@+id/imageButton16"

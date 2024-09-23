@@ -52,7 +52,7 @@
         android:layout_marginStart="103dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/bottomAppBar5"
-        app:srcCompat="@drawable/Package"
+        app:srcCompat="@drawable/packages_inventory"
         tools:layout_editor_absoluteY="660dp" />
 
     <ImageButton
@@ -74,7 +74,7 @@
         android:layout_marginStart="12dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/imageButton19"
-        app:srcCompat="@drawable/Users"
+        app:srcCompat="@drawable/profile_icon"
         tools:layout_editor_absoluteY="660dp" />
 
     <ImageButton
