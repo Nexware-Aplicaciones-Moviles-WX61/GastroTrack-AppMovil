@@ -16,12 +16,12 @@
         android:text="Home"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/ivProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/ivProfile"
         android:layout_width="84dp"
         android:layout_height="77dp"
         android:layout_marginTop="16dp"
@@ -31,7 +31,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar2"
+        android:id="@+id/bottomAppBarHome"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -41,7 +41,7 @@
         tools:layout_editor_absoluteY="653dp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ibHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -52,7 +52,7 @@
         app:srcCompat="@drawable/home" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/ibExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -60,23 +60,23 @@
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintStart_toEndOf="@+id/ibTeam"
         app:srcCompat="@drawable/log_out"
         tools:layout_editor_absoluteY="665dp" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/ibNotificaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintEnd_toStartOf="@+id/ibTeam"
         app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/notifications"
         tools:layout_editor_absoluteY="665dp" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/ibTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -86,14 +86,14 @@
         tools:layout_editor_absoluteX="255dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/ibInventory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintEnd_toStartOf="@+id/ibNotificaction"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/ibHome"
         app:srcCompat="@drawable/packages_inventory"
         tools:layout_editor_absoluteY="665dp" />
 
@@ -106,7 +106,7 @@
         android:background="#107D58"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/ivProfile">
 
         <TextView
             android:id="@+id/textView9"
