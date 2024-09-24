@@ -23,6 +23,11 @@
         </activity>
         <activity android:name=".LogInActivity" />
         <activity android:name=".SignInActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".InventoryActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".TeamActivity" />
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>
