@@ -19,17 +19,15 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Referencias a los botones
+
         val loginButton= findViewById<Button>(R.id.btLog)
         val signUpButton= findViewById<Button>(R.id.btSign)
 
-        // Al hacer clic en el botón de Login, redirige a LoginActivity
         loginButton.setOnClickListener {
             val intent = Intent(this,LogInActivity::class.java)
             startActivity(intent)
         }
 
-        // Al hacer clic en el botón de Sign Up, redirige a SignUpActivity
         signUpButton.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
