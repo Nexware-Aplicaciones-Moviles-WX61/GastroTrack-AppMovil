@@ -28,6 +28,7 @@
         <activity android:name=".NotificationActivity" />
         <activity android:name=".TeamActivity" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".UpdateProductActivity"/>
     </application>
 
 </manifest>
