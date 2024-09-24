@@ -49,11 +49,12 @@
         android:id="@+id/imageButton18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bottomAppBar5"
-        app:srcCompat="@drawable/packages_inventory"
-        tools:layout_editor_absoluteY="660dp" />
+        app:srcCompat="@drawable/packages_inventory" />
 
     <ImageButton
         android:id="@+id/imageButton19"
@@ -71,33 +72,25 @@
         android:id="@+id/imageButton20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton19"
-        app:srcCompat="@drawable/profile_icon"
-        tools:layout_editor_absoluteY="660dp" />
+        app:srcCompat="@drawable/profile_icon" />
 
     <ImageButton
         android:id="@+id/imageButton21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toEndOf="@+id/imageButton20"
-        app:srcCompat="@drawable/log_out"
-        tools:layout_editor_absoluteY="660dp" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="108dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/log_out" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -144,5 +137,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="109dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/exampleprofile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
