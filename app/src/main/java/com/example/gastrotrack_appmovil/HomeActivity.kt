@@ -30,7 +30,7 @@ class HomeActivity:AppCompatActivity() {
         }
 
         ibTeam.setOnClickListener {
-            val intent = Intent(this, TeamActivity::class.java) /
+            val intent = Intent(this, TeamActivity::class.java)
             startActivity(intent)
         }
 
@@ -43,7 +43,7 @@ class HomeActivity:AppCompatActivity() {
         ibExit.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() 
+            finish()
         }
     }
 }
