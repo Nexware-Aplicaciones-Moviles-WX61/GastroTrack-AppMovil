@@ -23,5 +23,12 @@ class InventoryActivity : AppCompatActivity() {
             val intent = Intent(this, UpdateProductActivity::class.java)
             startActivity(intent)
         }
+
+        val ibAdd=findViewById<ImageButton>(R.id.ibAdd)
+        ibAdd.setOnClickListener{
+            val intent = Intent(this, UpdateProductActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

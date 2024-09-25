@@ -29,6 +29,8 @@
         <activity android:name=".TeamActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".UpdateProductActivity"/>
+        <activity android:name=".AddMemberActivity"/>
+        <activity android:name=".UpdateTaskActivity"/>
     </application>
 
 </manifest>
