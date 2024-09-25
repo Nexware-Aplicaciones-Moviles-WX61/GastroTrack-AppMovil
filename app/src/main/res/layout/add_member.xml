@@ -97,10 +97,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="59dp"
+        android:layout_marginBottom="51dp"
         android:backgroundTint="#00E85C"
         android:text="Accept"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="632dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView32"
