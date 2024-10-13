@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@color/white"
             android:ems="10"
@@ -72,11 +72,12 @@
             android:inputType="text"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/etConfirmPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -92,11 +93,11 @@
             app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="19dp"
             android:layout_marginEnd="10dp"
             android:background="@color/white"
             android:ems="10"
@@ -104,15 +105,16 @@
             android:inputType="text"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+            app:layout_constraintTop_toBottomOf="@+id/etLastName" />
 
         <EditText
-            android:id="@+id/editTextText6"
+            android:id="@+id/etCompany"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="10dp"
             android:background="@color/white"
             android:ems="10"
@@ -120,8 +122,9 @@
             android:inputType="text"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+            app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />
 
         <Button
             android:id="@+id/btnSignUp"
@@ -135,7 +138,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+            app:layout_constraintTop_toBottomOf="@+id/etCompany" />
 
         <TextView
             android:id="@+id/tvStartAccount"

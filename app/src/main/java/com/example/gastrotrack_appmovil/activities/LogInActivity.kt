@@ -1,10 +1,11 @@
-package com.example.gastrotrack_appmovil
+package com.example.gastrotrack_appmovil.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gastrotrack_appmovil.R
 
 class LogInActivity: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class LogInActivity: AppCompatActivity(){
         }
 
         tvSignAccount.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

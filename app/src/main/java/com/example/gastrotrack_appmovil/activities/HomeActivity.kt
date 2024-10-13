@@ -1,10 +1,12 @@
-package com.example.gastrotrack_appmovil
+package com.example.gastrotrack_appmovil.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gastrotrack_appmovil.MainActivity
+import com.example.gastrotrack_appmovil.R
 
 class HomeActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

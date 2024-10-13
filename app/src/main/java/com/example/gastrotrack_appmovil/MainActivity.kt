@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.gastrotrack_appmovil.activities.LogInActivity
+import com.example.gastrotrack_appmovil.activities.SignUpActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         val signUpButton= findViewById<Button>(R.id.btSign)
 
         loginButton.setOnClickListener {
-            val intent = Intent(this,LogInActivity::class.java)
+            val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
 
         signUpButton.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 

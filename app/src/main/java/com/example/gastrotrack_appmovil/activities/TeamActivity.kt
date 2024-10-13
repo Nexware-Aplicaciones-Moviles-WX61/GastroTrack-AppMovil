@@ -1,9 +1,10 @@
-package com.example.gastrotrack_appmovil
+package com.example.gastrotrack_appmovil.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gastrotrack_appmovil.R
 
 class TeamActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,17 +23,17 @@ class TeamActivity:AppCompatActivity() {
         }
 
         ibAddMember.setOnClickListener{
-            val intent=Intent(this,AddMemberActivity::class.java)
+            val intent=Intent(this, AddMemberActivity::class.java)
             startActivity(intent)
         }
 
         ibAddTask.setOnClickListener{
-            val intent=Intent(this,UpdateTaskActivity::class.java)
+            val intent=Intent(this, UpdateTaskActivity::class.java)
             startActivity(intent)
         }
 
         ibUpdateTask.setOnClickListener{
-            val intent=Intent(this,UpdateTaskActivity::class.java)
+            val intent=Intent(this, UpdateTaskActivity::class.java)
             startActivity(intent)
         }
 
