@@ -5,13 +5,15 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "members")
-data class Members(
+data class Members (
     @PrimaryKey(autoGenerate = true)
-    val id: Long? = null,
-    @ColumnInfo(name = "name")
-    val name: String,
-    @ColumnInfo(name = "price")
-    val price: Long,
-    @ColumnInfo(name = "user_id")
-    val userId: Int
+    val id: Int? = null,
+    @ColumnInfo(name = "member_name")
+    val memberName: String,
+    @ColumnInfo(name = "description")
+    val description: String,
+    @ColumnInfo(name = "photo")
+    val photo: String,
+    @ColumnInfo(name = "role_id")
+    val roleId: Int // Relacionado con la tabla Role
 )

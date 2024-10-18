@@ -1,21 +1,24 @@
 package com.example.gastrotrack_appmovil.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.gastrotrack_appmovil.R
 import com.example.gastrotrack_appmovil.models.Members
+import com.example.gastrotrack_appmovil.models.Role
 
-class MemberAdapter(private val membersList: List<Members>) : RecyclerView.Adapter<MemberAdapter.MemberViewHolder>() {
+class MemberAdapter(private val members: List<Members>, private val roles: List<Role>) : RecyclerView.Adapter<MemberAdapter.MemberViewHolder>() {
 
-    class MemberViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivMemberPhoto: ImageView = itemView.findViewById(R.id.ivMemberPhoto)
-        val tvMemberName: TextView = itemView.findViewById(R.id.tvMemberName)
-        val tvDescriptionMember: TextView = itemView.findViewById(R.id.tvDescriptionMember)
-        val tvRoleMember: TextView = itemView.findViewById(R.id.tvRoleMember)
+    class MemberViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val memberPhoto: ImageView = view.findViewById(R.id.ivMemberPhoto)
+        val memberName: TextView = view.findViewById(R.id.tvMemberName)
+        val memberDescription: TextView = view.findViewById(R.id.tvDescriptionMember)
+        val memberRole: TextView = view.findViewById(R.id.tvRoleMember)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberViewHolder {
@@ -25,13 +28,21 @@ class MemberAdapter(private val membersList: List<Members>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: MemberViewHolder, position: Int) {
-        val member = membersList[position]
-        holder.tvMemberName.text = member.name
-        //holder.tvDescriptionMember.text = member.description
-        //holder.tvRoleMember.text = member.role
+        val member = members[position]
+
+        holder.memberName.text = member.memberName
+        holder.memberDescription.text = member.description
+
+        
+        Glide.with(holder.itemView.context)
+            .load(member.photo)
+            .into(holder.memberPhoto)
+
+        val role = roles.find { it.id == member.roleId }
+        holder.memberRole.text = role?.roleName ?: "Unknown Role"
     }
 
     override fun getItemCount(): Int {
-        return membersList.size
+        return members.size
     }
 }
