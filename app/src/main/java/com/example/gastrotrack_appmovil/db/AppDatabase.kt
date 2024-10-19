@@ -13,16 +13,16 @@ import com.example.gastrotrack_appmovil.models.Supplier
 import com.example.gastrotrack_appmovil.models.Task
 import com.example.gastrotrack_appmovil.models.User
 
-@Database(entities = [User::class, Product::class, Notification::class, Task::class,Report::class,Supplier::class,Members::class,Role::class], version = 1)
+@Database(entities = [User::class, /*Product::class,*/ /*Notification::class,*/ Task::class,/*Report::class,Supplier::class,Members::class,Role::class*/], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDAO(): UserDAO
-    abstract fun productDAO(): ProductDAO
-    abstract fun notificationDAO(): NotificationDAO
+    //abstract fun productDAO(): ProductDAO
+    //abstract fun notificationDAO(): NotificationDAO
     abstract fun taskDAO():TaskDAO
-    abstract fun reportDAO():ReportDAO
-    abstract fun supplierDAO():SupplierDAO
-    abstract fun membersDAO():MembersDAO
-    abstract fun roleDAO():RoleDAO
+    //abstract fun reportDAO():ReportDAO
+    //abstract fun supplierDAO():SupplierDAO
+    //abstract fun membersDAO():MembersDAO
+    //abstract fun roleDAO():RoleDAO
 
     companion object {
         @Volatile
