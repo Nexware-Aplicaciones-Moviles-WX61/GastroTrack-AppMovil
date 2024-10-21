@@ -11,7 +11,7 @@ class ProfileActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile)
 
-        val ibHomeReturnP = findViewById<ImageButton>(R.id.ibHome)
+        val ibHomeReturnP = findViewById<ImageButton>(R.id.ibNotification)
 
         ibHomeReturnP.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)

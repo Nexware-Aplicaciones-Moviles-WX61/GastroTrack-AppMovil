@@ -80,7 +80,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
-        android:id="@+id/ibHome"
+        android:id="@+id/ibNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -98,7 +98,7 @@
         android:backgroundTint="#03FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ibNotificaction"
-        app:layout_constraintStart_toEndOf="@+id/ibHome"
+        app:layout_constraintStart_toEndOf="@+id/ibNotification"
         app:srcCompat="@drawable/packages_inventory" />
 
     <ImageButton
