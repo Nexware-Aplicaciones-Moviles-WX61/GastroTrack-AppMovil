@@ -61,7 +61,7 @@ class AddTaskActivity : AppCompatActivity() {
         )
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://gastrotrack-backend.onrender.com/") 
+            .baseUrl("https://gastrotrack-backend.onrender.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
