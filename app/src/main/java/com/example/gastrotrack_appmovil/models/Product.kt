@@ -12,7 +12,7 @@ data class Product(
     @ColumnInfo(name = "name")
     val name: String,
     @ColumnInfo(name = "category_id")
-    val categoryId: ECategory,  // Usamos el enum ECategory
+    val categoryId: ECategory,
     @ColumnInfo(name = "date_manufacture")
     val dateManufacture: String,
     @ColumnInfo(name = "due_date")

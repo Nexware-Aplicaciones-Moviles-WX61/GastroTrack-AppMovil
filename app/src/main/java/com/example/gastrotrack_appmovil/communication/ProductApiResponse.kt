@@ -15,7 +15,7 @@ class ProductApiResponse (
     fun toProduct(): Product {
         return Product(
             name = name,
-            categoryId = ECategory.fromId(categoryId),  // Convertimos el ID numérico a ECategory
+            categoryId = ECategory.fromId(categoryId),
             dateManufacture = dateManufacture,
             dueDate = dueDate,
             stock = stock,

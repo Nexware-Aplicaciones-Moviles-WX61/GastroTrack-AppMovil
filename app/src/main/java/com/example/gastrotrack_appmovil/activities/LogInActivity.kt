@@ -23,7 +23,6 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.log_in)
 
-        // Inicializando vistas
         etEmail = findViewById(R.id.et_usuario_login)
         etPassword = findViewById(R.id.et_password_login)
         btnLogin = findViewById(R.id.btLogin)

@@ -10,7 +10,6 @@ import com.example.gastrotrack_appmovil.models.User
 
 class ProfileAdapter(private val userProfile: User) : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {
 
-
     class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvFirstName: TextView = itemView.findViewById(R.id.tvFirstName)
         val tvLastName: TextView = itemView.findViewById(R.id.tvLastName)
