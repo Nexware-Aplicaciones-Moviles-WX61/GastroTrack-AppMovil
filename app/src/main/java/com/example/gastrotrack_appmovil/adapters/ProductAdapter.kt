@@ -6,65 +6,56 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.gastrotrack_appmovil.R
 import com.example.gastrotrack_appmovil.models.Product
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val products: List<Product>, val clickLister: OnItemClickListener) : Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private val productList: List<Product>,private val onEditClick: (Product) -> Unit, private val onDeleteClick: (Product) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
-    inner class ProductViewHolder(itemView: View): ViewHolder(itemView) {
-        private val tvProductName = itemView.findViewById<TextView>(R.id.tvProductName)
-        private val tvDateManufacture = itemView.findViewById<TextView>(R.id.tvDateManufacture)
-        private val tvExperitation = itemView.findViewById<TextView>(R.id.tvExperitation)
-        private val tvStock = itemView.findViewById<TextView>(R.id.tvStock)
-        private val tvState = itemView.findViewById<TextView>(R.id.tvState)
-        private val ivProductPhoto = itemView.findViewById<ImageView>(R.id.ivProductPhoto)
+    inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val textViewName: TextView = itemView.findViewById(R.id.tvProductName)
+        val textViewDate: TextView = itemView.findViewById(R.id.tvDateManufacture)
+        val textViewExpiration: TextView = itemView.findViewById(R.id.tvExperitation)
+        val textViewStock: TextView = itemView.findViewById(R.id.tvStock)
+        val textViewState: TextView = itemView.findViewById(R.id.tvState)
+        val imageView: ImageView = itemView.findViewById(R.id.ivProductPhoto)
+        val btnEdit: ImageButton = itemView.findViewById(R.id.btnEditProduct)
+        val btnDelete: ImageButton = itemView.findViewById(R.id.btnDeleteProduct)
 
-        private val btDeleteProduct = itemView.findViewById<ImageButton>(R.id.btnDeleteProduct)
-        private val btnEditProduct = itemView.findViewById<ImageButton>(R.id.btnEditProduct)
-
-        fun bind(products: Product, clicListener: OnItemClickListener){
-            tvProductName.text = products.name
-            tvDateManufacture.text = products.dateManufacture
-            tvExperitation.text = products.dueDate
-            tvStock.text = products.stock.toString()
-            tvState.text = products.state
-            Picasso.get()
-                .load(products.image)
-                .into(ivProductPhoto)
-
-            btDeleteProduct.setOnClickListener {
-                clickLister.onDeleteClick(products)
+        init {
+            btnEdit.setOnClickListener {
+                onEditClick(productList[adapterPosition])
             }
 
-            btnEditProduct.setOnClickListener {
-                clickLister.onEditClick(products)
+            btnDelete.setOnClickListener {
+                onDeleteClick(productList[adapterPosition])
             }
         }
-
-
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_product, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.prototype_product, parent, false)
         return ProductViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return products.size
-    }
-
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(products[position], clickLister)
+        val product = productList[position]
+        holder.textViewName.text = product.name
+        holder.textViewDate.text = product.dateManufacture
+        holder.textViewExpiration.text = product.dueDate
+        holder.textViewStock.text = product.stock.toString()
+        holder.textViewState.text = product.state
+
+        Picasso.get()
+            .load(product.image)
+            .into(holder.imageView)
     }
 
-    interface OnItemClickListener {
-        fun onDeleteClick(products: Product)
-        fun onEditClick(products: Product)
-    }
+    override fun getItemCount(): Int = productList.size
 }
 
 

@@ -6,21 +6,21 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "products")
-class Product (
+data class Product(
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
-    @ColumnInfo(name = "product_name")
-    var name: String? = null,
-    @ColumnInfo(name="categoryId")
-    var categoryId: Int? = null ,// Relacionado con la tabla Category
-    @ColumnInfo(name = "dateManufacture")
-    var dateManufacture: String? = null,
-    @ColumnInfo(name="dueDate")
-    var dueDate: String? = null,
+    val id: Int? = null,
+    @ColumnInfo(name = "name")
+    val name: String,
+    @ColumnInfo(name = "category_id")
+    val categoryId: ECategory,  // Usamos el enum ECategory
+    @ColumnInfo(name = "date_manufacture")
+    val dateManufacture: String,
+    @ColumnInfo(name = "due_date")
+    val dueDate: String,
     @ColumnInfo(name = "stock")
-    var stock: Int? = null,
-    @ColumnInfo(name="state")
-    var state: String? = null,
-    @ColumnInfo(name="image")
-    var image: String? = null
+    val stock: Int,
+    @ColumnInfo(name = "state")
+    val state: String,
+    @ColumnInfo(name = "image")
+    val image: String
 )

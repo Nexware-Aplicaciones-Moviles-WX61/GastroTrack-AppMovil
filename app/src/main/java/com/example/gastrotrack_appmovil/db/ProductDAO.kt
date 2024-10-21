@@ -10,16 +10,16 @@ import com.example.gastrotrack_appmovil.models.Product
 @Dao
 interface ProductDAO {
 
-    @Query("SELECT * FROM products")
-    fun getAll(): List<Product>
-
     @Insert
-    fun insertOne(product: Product)
+    fun insertProduct(product: Product): Long
+
+    @Query("SELECT * FROM products")
+    fun getAllProducts(): List<Product>
 
     @Delete
-    fun delete(product: Product)
+    fun deleteProduct(vararg products: Product)
 
-    @Update
-    fun update(product: Product)
+    @Query("SELECT * FROM products WHERE id = :id LIMIT 1")
+    fun getProductById(id: Int): Product
 
 }

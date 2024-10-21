@@ -33,7 +33,7 @@ class MemberAdapter(private val members: List<Members>, private val roles: List<
         holder.memberName.text = member.memberName
         holder.memberDescription.text = member.description
 
-        
+
         Glide.with(holder.itemView.context)
             .load(member.photo)
             .into(holder.memberPhoto)
