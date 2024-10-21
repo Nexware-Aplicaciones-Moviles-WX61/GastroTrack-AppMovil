@@ -32,7 +32,6 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sign_up)
 
-        // Inicializando vistas
         etNombre = findViewById(R.id.etNombre)
         etLastName = findViewById(R.id.etLastName)
         etPassword = findViewById(R.id.etPassword)

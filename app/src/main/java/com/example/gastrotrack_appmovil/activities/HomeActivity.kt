@@ -27,8 +27,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
-
-        // Configurar los botones de navegación
         val ibInventory = findViewById<ImageButton>(R.id.ibInventory)
         ibInventory.setOnClickListener {
             startActivity(Intent(this, InventoryActivity::class.java))

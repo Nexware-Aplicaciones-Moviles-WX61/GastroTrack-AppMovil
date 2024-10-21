@@ -109,7 +109,7 @@ class AddProductActivity : AppCompatActivity() {
         )
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:5193/")
+            .baseUrl("https://gastrotrack-backend.onrender.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
