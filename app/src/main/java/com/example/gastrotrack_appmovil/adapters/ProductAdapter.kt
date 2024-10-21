@@ -36,11 +36,11 @@ class ProductAdapter(private val products: List<Product>, val clickLister: OnIte
                 .into(ivProductPhoto)
 
             btDeleteProduct.setOnClickListener {
-                clickLister.onItemClick(products)
+                clickLister.onDeleteClick(products)
             }
 
             btnEditProduct.setOnClickListener {
-                clickLister.onItemClick(products)
+                clickLister.onEditClick(products)
             }
         }
 
@@ -62,7 +62,8 @@ class ProductAdapter(private val products: List<Product>, val clickLister: OnIte
     }
 
     interface OnItemClickListener {
-        fun onItemClick(products: Product)
+        fun onDeleteClick(products: Product)
+        fun onEditClick(products: Product)
     }
 }
 

@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "products")
 class Product (
     @PrimaryKey(autoGenerate = true)
-    var id: Int? = null,
+    var id: Int,
     @ColumnInfo(name = "product_name")
     var name: String? = null,
     @ColumnInfo(name="categoryId")

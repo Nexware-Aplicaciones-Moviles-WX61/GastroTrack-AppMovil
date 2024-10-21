@@ -7,7 +7,7 @@
     android:background="#E9B54D">
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/tvAddUpdateProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -33,7 +33,7 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAddUpdateProduct" />
 
     <EditText
         android:id="@+id/etStock"
