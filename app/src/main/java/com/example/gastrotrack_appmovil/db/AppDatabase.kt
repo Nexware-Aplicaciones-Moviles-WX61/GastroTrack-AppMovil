@@ -33,7 +33,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "PruebaGastroTrack.db"
+                    "GastroTrack_App.db"
                 )
                     .allowMainThreadQueries()
                     .build()

@@ -34,7 +34,6 @@ class TaskAdapter(
         }
     }
 
-    // Crear el ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.prototype_task, parent, false)
