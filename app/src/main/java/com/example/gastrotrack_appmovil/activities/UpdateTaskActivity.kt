@@ -11,7 +11,7 @@ class  UpdateTaskActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.update_task)
 
-        val btnCancelUT = findViewById<Button>(R.id.btnCanceledUT)
+        val btnCancelUT = findViewById<Button>(R.id.btnCanceledTask)
 
         btnCancelUT.setOnClickListener {
             val intent = Intent(this, TeamActivity::class.java)
