@@ -10,10 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gastrotrack_appmovil.R
 import com.example.gastrotrack_appmovil.adapters.MemberAdapter
 import com.example.gastrotrack_appmovil.adapters.TaskAdapter
+import com.example.gastrotrack_appmovil.communication.RoleApiResponse
 import com.example.gastrotrack_appmovil.db.AppDatabase
 import com.example.gastrotrack_appmovil.models.Members
 import com.example.gastrotrack_appmovil.models.Role
 import com.example.gastrotrack_appmovil.models.Task
+import com.example.gastrotrack_appmovil.network.RoleService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class TeamActivity : AppCompatActivity() {
     private lateinit var recyclerViewMembers: RecyclerView
@@ -95,8 +102,41 @@ class TeamActivity : AppCompatActivity() {
             val roles = roleDAO.getAllRoles()
             Log.d("TeamActivity", "Loaded roles: ${roles.size}")
             roleList.addAll(roles)
-            runOnUiThread {
-                setAdapterIfDataReady()
+
+            if (roleList.isEmpty()) {
+                val retrofit = Retrofit.Builder()
+                    .baseUrl("https://gastrotrack-backend.onrender.com/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+
+                val roleService = retrofit.create(RoleService::class.java)
+                roleService.getRoles().enqueue(object : Callback<List<RoleApiResponse>> {
+                    override fun onResponse(call: Call<List<RoleApiResponse>>, response: Response<List<RoleApiResponse>>) {
+                        if (response.isSuccessful) {
+                            val rolesApiResponse = response.body() ?: emptyList()
+                            roleList.addAll(rolesApiResponse.map { it.toRole() })
+                            Thread {
+                                roleDAO.getAllRoles()
+                            }.start()
+                        } else {
+                            Log.e("TeamActivity", "Error al cargar roles: ${response.code()}")
+                        }
+                        runOnUiThread {
+                            setAdapterIfDataReady()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<List<RoleApiResponse>>, t: Throwable) {
+                        Log.e("TeamActivity", "Error de red al cargar roles: ${t.message}")
+                        runOnUiThread {
+                            setAdapterIfDataReady()
+                        }
+                    }
+                })
+            } else {
+                runOnUiThread {
+                    setAdapterIfDataReady()
+                }
             }
         }.start()
     }
