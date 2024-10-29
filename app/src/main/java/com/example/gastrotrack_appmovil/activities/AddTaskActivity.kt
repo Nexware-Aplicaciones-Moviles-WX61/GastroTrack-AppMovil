@@ -37,7 +37,6 @@ class AddTaskActivity : AppCompatActivity() {
 
         val database = AppDatabase.getDatabase(this)
         taskDAO=database.taskDAO()
-        // Configurar el botón para agregar tarea
         btnAddTask.setOnClickListener {
             addTask()
         }
