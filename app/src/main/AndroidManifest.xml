@@ -37,6 +37,8 @@
         <activity android:name=".activities.AddSupplierActivity"/>
         <activity android:name=".activities.AddReportActivity"/>
         <activity android:name=".activities.UpdateTaskActivity"/>
+        <activity android:name=".activities.UpdateProductActivity"/>
+        <activity android:name=".activities.UpdateUserActivity"/>
     </application>
 
 </manifest>

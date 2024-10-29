@@ -2,37 +2,30 @@ package com.example.gastrotrack_appmovil.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gastrotrack_appmovil.MainActivity
 import com.example.gastrotrack_appmovil.R
 import com.example.gastrotrack_appmovil.adapters.ProductAdapter
-import com.example.gastrotrack_appmovil.communication.ProductApiResponse
 import com.example.gastrotrack_appmovil.db.AppDatabase
 import com.example.gastrotrack_appmovil.models.Product
-import com.example.gastrotrack_appmovil.network.ProductService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class InventoryActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProductAdapter
+    private lateinit var searchEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.inventory)
 
-        val ibHomeReturnI = findViewById<ImageButton>(R.id.btnHomeReturnInventory)
+        val ibHomeReturnI = findViewById<ImageButton>(R.id.ibHomeReturnI)
         ibHomeReturnI.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
@@ -47,7 +40,20 @@ class InventoryActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rvProducts)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+        searchEditText = findViewById(R.id.etSearchProduct)
+
         loadProducts()
+
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                adapter.filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
     private fun loadProducts() {
@@ -55,7 +61,7 @@ class InventoryActivity : AppCompatActivity() {
         val products = dao.getAllProducts()
 
         if (products.isNotEmpty()) {
-            adapter = ProductAdapter(products.toMutableList(),
+            adapter = ProductAdapter(products.toMutableList(), products.toMutableList(),
                 { product -> editProduct(product) },
                 { product -> deleteProduct(product) }
             )
@@ -66,10 +72,11 @@ class InventoryActivity : AppCompatActivity() {
     }
 
     private fun editProduct(product: Product) {
-        val intent = Intent(this, AddProductActivity::class.java)
+        val intent = Intent(this, UpdateProductActivity::class.java)
         intent.putExtra("PRODUCT_ID", product.id)
         startActivity(intent)
     }
+
 
     private fun deleteProduct(product: Product) {
         val dao = AppDatabase.getDatabase(this).productDAO()

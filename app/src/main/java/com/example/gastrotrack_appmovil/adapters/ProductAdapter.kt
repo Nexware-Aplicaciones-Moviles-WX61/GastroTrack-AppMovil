@@ -7,13 +7,17 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.gastrotrack_appmovil.R
 import com.example.gastrotrack_appmovil.models.Product
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val productList: List<Product>,private val onEditClick: (Product) -> Unit, private val onDeleteClick: (Product) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+class ProductAdapter(
+    private var productList: List<Product>,
+    private val originalList: List<Product>,
+    private val onEditClick: (Product) -> Unit,
+    private val onDeleteClick: (Product) -> Unit
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textViewName: TextView = itemView.findViewById(R.id.tvProductName)
@@ -56,6 +60,15 @@ class ProductAdapter(private val productList: List<Product>,private val onEditCl
     }
 
     override fun getItemCount(): Int = productList.size
+
+    fun filter(query: String) {
+        productList = if (query.isEmpty()) {
+            originalList
+        } else {
+            originalList.filter {
+                it.name.contains(query, ignoreCase = true)
+            }
+        }
+        notifyDataSetChanged()
+    }
 }
-
-
