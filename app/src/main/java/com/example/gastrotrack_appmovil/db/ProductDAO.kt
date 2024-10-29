@@ -9,7 +9,6 @@ import com.example.gastrotrack_appmovil.models.Product
 
 @Dao
 interface ProductDAO {
-
     @Insert
     fun insertProduct(product: Product): Long
 
@@ -22,4 +21,6 @@ interface ProductDAO {
     @Query("SELECT * FROM products WHERE id = :id LIMIT 1")
     fun getProductById(id: Int): Product
 
+    @Update
+    fun updateProduct(product: Product): Int
 }

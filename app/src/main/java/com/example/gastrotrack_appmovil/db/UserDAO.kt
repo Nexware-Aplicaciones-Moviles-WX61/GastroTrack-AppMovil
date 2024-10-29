@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.gastrotrack_appmovil.models.User
 
 
@@ -20,4 +21,10 @@ interface UserDAO {
 
     @Query("SELECT * FROM users WHERE email = :email LIMIT 1")
     fun getUserByEmail(email: String): User
+
+    @Update
+    fun updateUser(user: User)
+
+    @Query("SELECT * FROM users WHERE id = :id LIMIT 1")
+    fun getUserById(id: Long): User
 }
