@@ -1,7 +1,7 @@
 package com.example.gastrotrack_appmovil.activities
 
 
-// UpdateUserActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -52,6 +52,13 @@ class UpdateUserActivity : AppCompatActivity() {
         val btnAccept = findViewById<Button>(R.id.btnAcceptUser)
         btnAccept.setOnClickListener {
             updateUser()
+        }
+
+        val btnCanceled = findViewById<Button>(R.id.btnDeleteUser)
+        btnCanceled.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

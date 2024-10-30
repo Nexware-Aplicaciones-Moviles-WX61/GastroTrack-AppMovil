@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Delete
+import androidx.room.Update
 import com.example.gastrotrack_appmovil.models.Task
 
 @Dao
@@ -19,4 +20,7 @@ interface TaskDAO {
 
     @Delete
     fun deleteTask(vararg tasks: Task)
+
+    @Update
+    fun updateTask(task: Task)
 }

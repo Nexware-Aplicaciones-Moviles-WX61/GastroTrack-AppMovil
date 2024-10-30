@@ -59,7 +59,6 @@ class TeamActivity : AppCompatActivity() {
 
         loadMembers()
         loadRoles()
-
         loadTasks()
 
         ibHomeReturnT.setOnClickListener {
@@ -82,85 +81,55 @@ class TeamActivity : AppCompatActivity() {
         val database = AppDatabase.getDatabase(this)
         val memberDAO = database.membersDAO()
 
-        Thread {
-            memberList.clear()
-            val members = memberDAO.getAllMembers()
-            Log.d("TeamActivity", "Loaded members: ${members.size}")
-            memberList.addAll(members)
-            runOnUiThread {
-                setAdapterIfDataReady()
-            }
-        }.start()
+        memberList.clear()
+        val members = memberDAO.getAllMembers()
+        memberList.addAll(members)
+
+        memberAdapter = MemberAdapter(memberList, roleList)
+        recyclerViewMembers.adapter = memberAdapter
     }
 
     private fun loadRoles() {
         val database = AppDatabase.getDatabase(this)
         val roleDAO = database.roleDAO()
 
-        Thread {
-            roleList.clear()
-            val roles = roleDAO.getAllRoles()
-            Log.d("TeamActivity", "Loaded roles: ${roles.size}")
-            roleList.addAll(roles)
+        roleList.clear()
+        val roles = roleDAO.getAllRoles()
+        roleList.addAll(roles)
 
-            if (roleList.isEmpty()) {
-                val retrofit = Retrofit.Builder()
-                    .baseUrl("https://gastrotrack-backend.onrender.com/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
+        if (roleList.isEmpty()) {
+            val retrofit = Retrofit.Builder()
+                .baseUrl("https://gastrotrack-backend.onrender.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
-                val roleService = retrofit.create(RoleService::class.java)
-                roleService.getRoles().enqueue(object : Callback<List<RoleApiResponse>> {
-                    override fun onResponse(call: Call<List<RoleApiResponse>>, response: Response<List<RoleApiResponse>>) {
-                        if (response.isSuccessful) {
-                            val rolesApiResponse = response.body() ?: emptyList()
-                            roleList.addAll(rolesApiResponse.map { it.toRole() })
-                            Thread {
-                                roleDAO.getAllRoles()
-                            }.start()
-                        } else {
-                            Log.e("TeamActivity", "Error al cargar roles: ${response.code()}")
-                        }
-                        runOnUiThread {
-                            setAdapterIfDataReady()
-                        }
+            val roleService = retrofit.create(RoleService::class.java)
+            roleService.getRoles().enqueue(object : Callback<List<RoleApiResponse>> {
+                override fun onResponse(call: Call<List<RoleApiResponse>>, response: Response<List<RoleApiResponse>>) {
+                    if (response.isSuccessful) {
+                        val rolesApiResponse = response.body() ?: emptyList()
+                        roleList.addAll(rolesApiResponse.map { it.toRole() })
+                        roleDAO.getAllRoles()
+
+                    } else {
+                        Log.e("TeamActivity", "Error al cargar roles: ${response.code()}")
                     }
-
-                    override fun onFailure(call: Call<List<RoleApiResponse>>, t: Throwable) {
-                        Log.e("TeamActivity", "Error de red al cargar roles: ${t.message}")
-                        runOnUiThread {
-                            setAdapterIfDataReady()
-                        }
-                    }
-                })
-            } else {
-                runOnUiThread {
-                    setAdapterIfDataReady()
                 }
-            }
-        }.start()
+
+                override fun onFailure(call: Call<List<RoleApiResponse>>, t: Throwable) {
+                    Log.e("TeamActivity", "Error de red al cargar roles: ${t.message}")
+                }
+            })
+        }
     }
 
     private fun loadTasks() {
         val database = AppDatabase.getDatabase(this)
         val taskDAO = database.taskDAO()
 
-        Thread {
-            taskList.clear()
-            val tasks = taskDAO.getAllTasks()
-            taskList.addAll(tasks)
-            runOnUiThread {
-                taskAdapter.notifyDataSetChanged()
-                Log.d("TeamActivity", "Loaded tasks: ${taskList.size}")
-            }
-        }.start()
-    }
-
-    private fun setAdapterIfDataReady() {
-        if (memberList.isNotEmpty() && roleList.isNotEmpty()) {
-            memberAdapter = MemberAdapter(memberList, roleList)
-            recyclerViewMembers.adapter = memberAdapter
-            Log.d("TeamActivity", "Member adapter set with ${memberList.size} members and ${roleList.size} roles")
-        }
+        taskList.clear()
+        val tasks = taskDAO.getAllTasks()
+        taskList.addAll(tasks)
+        Log.d("TeamActivity", "Loaded tasks: ${taskList.size}")
     }
 }

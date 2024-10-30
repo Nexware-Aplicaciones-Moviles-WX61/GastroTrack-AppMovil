@@ -53,7 +53,4 @@ class TaskAdapter(
         return taskList.size
     }
 
-    interface OnItemClickListener {
-        fun OnItemClicked(task: Task)
-    }
 }
