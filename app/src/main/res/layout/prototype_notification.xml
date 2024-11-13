@@ -41,8 +41,9 @@
             android:id="@+id/btnAcceptNotification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="36dp"
             android:layout_marginBottom="1dp"
+            android:backgroundTint="#00E85C"
             android:text="Accept"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -54,6 +55,7 @@
             android:layout_marginStart="115dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="39dp"
+            android:backgroundTint="#FD3535"
             android:text="Delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnAcceptNotification"
