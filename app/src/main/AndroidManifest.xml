@@ -39,6 +39,7 @@
         <activity android:name=".activities.UpdateTaskActivity"/>
         <activity android:name=".activities.UpdateProductActivity"/>
         <activity android:name=".activities.UpdateUserActivity"/>
+        <activity android:name=".activities.TermsActivity"/>
     </application>
 
 </manifest>
