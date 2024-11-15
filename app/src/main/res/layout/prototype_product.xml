@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:padding="8dp"
-    app:cardBackgroundColor="#107D58"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#107D58"
+        android:background="@color/white"
         android:padding="16dp">
 
         <TextView
@@ -24,6 +24,7 @@
             android:layout_marginTop="16dp"
             android:text="Product Name"
             android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginEnd="26dp"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/btnDeleteProduct"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_edit" />
