@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:padding="8dp"
     app:cardBackgroundColor="@color/white"
@@ -18,11 +18,11 @@
 
         <ImageView
             android:id="@+id/ivSupplierPhoto"
-            android:layout_width="87dp"
-            android:layout_height="78dp"
+            android:layout_width="91dp"
+            android:layout_height="88dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

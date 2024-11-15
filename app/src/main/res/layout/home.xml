@@ -37,7 +37,7 @@
         android:layout_marginTop="300dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="25dp"
-        android:background="@drawable/rounded_border_green"
+        android:background="#107D58"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
@@ -71,10 +71,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="334dp"
-        android:layout_height="157dp"
+        android:layout_width="337dp"
+        android:layout_height="165dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_border_green"
+        android:background="#107D58"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.402"
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="5dp"
             android:text="Providers"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,10 +95,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProviders"
-            android:layout_width="304dp"
-            android:layout_height="121dp"
+            android:layout_width="302dp"
+            android:layout_height="149dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -119,11 +119,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="337dp"
-        android:layout_height="170dp"
+        android:layout_width="339dp"
+        android:layout_height="165dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="44dp"
-        android:background="@drawable/rounded_border_green"
+        android:background="#107D58"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -144,16 +144,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvReports"
-            android:layout_width="311dp"
-            android:layout_height="125dp"
+            android:layout_width="305dp"
+            android:layout_height="137dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.888" />
+            app:layout_constraintVertical_bias="0.571" />
 
         <ImageButton
             android:id="@+id/ibAddReport"
