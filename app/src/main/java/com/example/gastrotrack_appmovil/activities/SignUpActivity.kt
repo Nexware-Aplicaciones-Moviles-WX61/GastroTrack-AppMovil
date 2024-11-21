@@ -1,8 +1,10 @@
 package com.example.gastrotrack_appmovil.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gastrotrack_appmovil.R
@@ -45,6 +47,12 @@ class SignUpActivity : AppCompatActivity() {
 
         btnSignUp.setOnClickListener {
             registerUser()
+        }
+
+        val tvSignAccount = findViewById<TextView>(R.id.tvStartAccount)
+        tvSignAccount.setOnClickListener {
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
         }
     }
 

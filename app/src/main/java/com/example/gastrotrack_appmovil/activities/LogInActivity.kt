@@ -33,6 +33,12 @@ class LogInActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             loginUser()
         }
+
+        val tvSignUp = findViewById<TextView>(R.id.tvSignAccount)
+        tvSignUp.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loginUser() {
