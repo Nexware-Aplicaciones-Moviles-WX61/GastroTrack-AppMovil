@@ -26,6 +26,8 @@ class UpdateUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.update_user)
 
+
+
         etFirstName = findViewById(R.id.etUdFirstName)
         etLastName = findViewById(R.id.etUdLastName)
         etEmail = findViewById(R.id.etUdEmail)
@@ -54,7 +56,7 @@ class UpdateUserActivity : AppCompatActivity() {
             updateUser()
         }
 
-        val btnCanceled = findViewById<Button>(R.id.btnDeleteUser)
+        val btnCanceled = findViewById<Button>(R.id.btnCanceledUser)
         btnCanceled.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
